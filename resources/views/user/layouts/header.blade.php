@@ -31,13 +31,13 @@
       <p class="button-custom order-lg-last mb-0"><a href="{{route('appointment')}}" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a href="{{route('home')}}" class="nav-link pl-0">Home</a></li>
-        <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="{{route('doctor')}}" class="nav-link">Doctor</a></li>
-            <li class="nav-item"><a href="{{route('departments')}}" class="nav-link">Departments</a></li>
-            <li class="nav-item"><a href="{{route('pricing')}}" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+            <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}"><a href="{{route('home')}}" class="nav-link pl-0">Home</a></li>
+        <li class="nav-item {{ (request()->is('about')) ? 'active' : '' }}"><a href="{{route('about')}}" class="nav-link">About</a></li>
+            <li class="nav-item {{ (request()->is('doctor')) ? 'active' : '' }}"><a href="{{route('doctor')}}" class="nav-link">Doctor</a></li>
+            <li class="nav-item {{ (request()->is('departments')) ? 'active' : '' }}"><a href="{{route('departments')}}" class="nav-link">Departments</a></li>
+            <li class="nav-item {{ (request()->is('pricing')) ? 'active' : '' }}"><a href="{{route('pricing')}}" class="nav-link">Pricing</a></li>
+            <li class="nav-item {{ (request()->is('blog')) ? 'active' : '' }}"><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
+          <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </div>
