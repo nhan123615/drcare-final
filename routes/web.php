@@ -8,10 +8,10 @@ use App\Http\Controllers\User\DepartmentController;
 use App\Http\Controllers\User\PricingController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
-
+use App\Http\Controllers\User\AppointmentController;
 //admin
 use App\Http\Controllers\Admin\HomeAdminController;
-/* use App\Http\Controllers\User\AppointmentController; */
+
 /*
 
 
@@ -36,7 +36,8 @@ Route::get('/departments', [DepartmentController::class, 'index'])->name('depart
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::resource('/appointment', 'App\Http\Controllers\User\AppointmentController');
+Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment');
+/* Route::resource('/appointment', 'App\Http\Controllers\User\AppointmentController'); */
 
 //admin
 Route::get('/admin/home', [HomeAdminController::class, 'index']);

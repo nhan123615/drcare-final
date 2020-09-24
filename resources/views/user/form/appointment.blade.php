@@ -8,7 +8,8 @@
             <h2 class="mb-4">Free Consultation</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
-          
+
+
         <form action="{{route('appointment.store')}}" class="appointment-form ftco-animate" method="post">
             {{csrf_field()}}
                     <div class="d-md-flex">
