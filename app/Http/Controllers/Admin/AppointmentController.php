@@ -63,7 +63,7 @@ class AppointmentController extends Controller
         $appointment->message = $request->message;
         $appointment->save();
 
-       return redirect()->back()->with('message', 'Successfull !');
+       return redirect()->back()->with('message', 'Submit Successfull !');
        
     }
 
@@ -109,6 +109,8 @@ class AppointmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        appointment::where('id', $id)->delete();
+        return redirect()->back()->with('message', 'Delete Successfull !'); 
+       
     }
 }

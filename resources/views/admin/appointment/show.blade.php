@@ -29,8 +29,10 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header text-center">      
+          @include('includes.messages')
             <h3 class="card-title">Contact Manager</h3>
        {{--  <a class="btn btn-success text-white" href="">Add New Tag</a>       --}}
+       
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fas fa-minus"></i></button>
@@ -71,7 +73,19 @@
                     <td>{{$appointment->date}}</td>
                     <td>{{$appointment->time}}</td>
                     <td>{{$appointment->message}}</td>
-                    <td>DELETE</td>
+                    <td class="text-center">
+                      <form id="delete-form-{{$appointment->id}}" action="{{route('appointment.destroy',$appointment->id)}}" style="display:none" method="post">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                      </form>
+                    <a href="" onclick="
+                    if(confirm('Are you sure, you want to delete this ?')){
+                      event.preventDefault();
+                      document.getElementById('delete-form-{{$appointment->id}}').submit();
+                    }else{
+                      event.preventDefault();
+                    }"><i class="fa fa-trash  text-danger" aria-hidden="true"></i></a>
+                      </td>
                   </tr>    
                   @endforeach
                    

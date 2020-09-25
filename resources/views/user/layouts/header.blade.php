@@ -38,6 +38,7 @@
             <li class="nav-item {{ (request()->is('pricing')) ? 'active' : '' }}"><a href="{{route('pricing')}}" class="nav-link">Pricing</a></li>
             <li class="nav-item {{ (request()->is('blog')) ? 'active' : '' }}"><a href="{{route('blog')}}" class="nav-link">Blog</a></li>
           <li class="nav-item {{ (request()->is('contact')) ? 'active' : '' }}"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+          <li class="nav-item "><a href="{{route('admin')}}" class="nav-link text-danger">Admin</a></li>
         </ul>
       </div>
     </div>

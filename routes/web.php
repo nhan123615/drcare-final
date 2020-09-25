@@ -40,6 +40,6 @@ Route::get('/appointment', [AppointmentController::class, 'index'])->name('appoi
 /* Route::resource('/appointment', 'App\Http\Controllers\User\AppointmentController'); */
 
 //admin
-Route::get('/admin/home', [HomeAdminController::class, 'index']);
+Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin');
 Route::resource('/admin/appointment', 'App\Http\Controllers\Admin\AppointmentController');
 
