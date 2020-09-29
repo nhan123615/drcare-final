@@ -54,7 +54,7 @@
                   <th>S.No</th>
                   <th>First Name</th>
                   <th>Last Name</th>
-                  <th>Service</th>
+                  <th>Doctor</th>
                   <th>Phone</th>
                   <th>Date</th>
                   <th>Time</th>
@@ -68,7 +68,9 @@
                     <td>{{$loop->index + 1}}</td>
                     <td>{{$appointment->first_name}}</td>
                     <td>{{$appointment->last_name}}</td>
-                    <td>{{$appointment->service}}</td>
+                    <td>{{Illuminate\Support\Facades\DB::table('doctors')->find($appointment->doctor_id)->name
+                      
+                      }}</td>
                     <td>{{$appointment->phone}}</td>
                     <td>{{$appointment->date}}</td>
                     <td>{{$appointment->time}}</td>
@@ -95,7 +97,7 @@
                   <th>S.No</th>
                   <th>First Name</th>
                   <th>Last Name</th>
-                  <th>Service</th>
+                  <th>Doctor</th>
                   <th>Phone</th>
                   <th>Date</th>
                   <th>Time</th>

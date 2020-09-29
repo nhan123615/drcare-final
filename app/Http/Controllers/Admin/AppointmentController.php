@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\user\appointment;
+use App\Models\user\doctor;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
 {
@@ -16,7 +18,11 @@ class AppointmentController extends Controller
      */
     public function index()
     {
+      
         $appointments =   appointment::all();
+       
+     /*   $doctors  = DB::table('doctors')->select('name')->get();
+       return $doctors; */
         return view('admin.appointment.show',compact('appointments'));
     }
 
@@ -45,7 +51,7 @@ class AppointmentController extends Controller
           $this->validate($request,[
             'firstname' =>'required',
             'lastname' =>'required',
-            'service' =>'required',
+            'doctor' =>'required',
             'phone' =>'required',
             'date' =>'required',
             'time' =>'required',
@@ -56,12 +62,13 @@ class AppointmentController extends Controller
         $appointment = new appointment;
         $appointment->first_name = $request->firstname;
         $appointment->last_name = $request->lastname;
-        $appointment->service = $request->service;
+        $appointment->doctor_id = $request->doctor;
         $appointment->phone = $request->phone;
         $appointment->date = $request->date;
         $appointment->time = $request->time;
         $appointment->message = $request->message;
         $appointment->save();
+       /*  $appointment->doctors()->sync($request->doctors); */
 
        return redirect()->back()->with('message', 'Submit Successfull !');
        

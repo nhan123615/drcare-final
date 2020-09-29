@@ -10,15 +10,10 @@
           @section('main-content')
               @show
       @else
-
           @section('title')
             @show
-
           @section('sub-title')
             @show
-
-            
-
           @section('main-content')
             @show
  @endif       

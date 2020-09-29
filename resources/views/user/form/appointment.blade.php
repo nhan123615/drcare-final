@@ -25,13 +25,15 @@
                             <div class="form-field">
                           <div class="select-wrap">
                   <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                  <select name="service" id="" class="form-control">
-                      <option value="">Select Your Services</option>
-                    <option value="Neurology">Neurology</option>
-                    <option value="Cardiology">Cardiology</option>
-                    <option value="Dental">Dental</option>
-                    <option value="Ophthalmology">Ophthalmology</option>
-                    <option value="Other Services">Other Services</option>
+                  <select name="doctor" id="" class="form-control">
+                    <option value="">Select Your Services</option>
+               {{--  @if(App::environment() !== 'local') --}}
+                    @foreach($doctors  as $doctor)
+                      
+                    <option value="{{$doctor->id}}">{{$doctor->name}}</option>
+                      @endforeach
+                   {{--  @endif --}}
+                   
                   </select>
                 </div>
                   </div>
